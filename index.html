@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX Chopsticks Recovery Visualization</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SpaceX Starship Booster Recovery System</h1>
+        <div class="visualization">
+            <div class="stars"></div>
+            <div class="tower"></div>
+            <div class="chopsticks left-stick"></div>
+            <div class="chopsticks right-stick"></div>
+            <div class="booster">
+                <div class="booster-body"></div>
+                <div class="engine-section"></div>
+            </div>
+            <div class="info-panel">
+                <h3>Recovery Process</h3>
+                <p id="step-description">Click 'Start Animation' to begin the recovery sequence.</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="startBtn" onclick="startAnimation()">Start Animation</button>
+            <button id="resetBtn" onclick="resetAnimation()">Reset</button>
+        </div>
+        <div class="step-indicator">
+            <div class="step" id="step1"></div>
+            <div class="step" id="step2"></div>
+            <div class="step" id="step3"></div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
