@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpaceX Chopsticks Recovery Visualization</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SpaceX Starship Booster Recovery System Visualization">
+    <title>SpaceX Chopsticks Recovery System</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=geist@400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>SpaceX Starship Booster Recovery System</h1>
-        <div class="visualization">
-            <div class="stars"></div>
-            <div class="tower"></div>
-            <div class="chopsticks left-stick"></div>
-            <div class="chopsticks right-stick"></div>
-            <div class="booster">
-                <div class="booster-body"></div>
-                <div class="engine-section"></div>
+    <section class="hero">
+        <img src="assets/hero-image.png" class="hero-image" alt="SpaceX Starship">
+        <div class="hero-content">
+            <h1 class="hero-title">How do the SpaceX chopsticks catches the Starship Booster?</h1>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="visualization-container">
+            <div class="sticky-container">
+                <div class="components">
+                    <div class="tower component"></div>
+                    <div class="chopsticks component left-stick"></div>
+                    <div class="chopsticks component right-stick"></div>
+                    <div class="booster component"></div>
+                    <div class="description-box"></div>
+                </div>
             </div>
-            <div class="info-panel">
-                <h3>Recovery Process</h3>
-                <p id="step-description">Click 'Start Animation' to begin the recovery sequence.</p>
-            </div>
         </div>
-        <div class="controls">
-            <button id="startBtn" onclick="startAnimation()">Start Animation</button>
-            <button id="resetBtn" onclick="resetAnimation()">Reset</button>
-        </div>
-        <div class="step-indicator">
-            <div class="step" id="step1"></div>
-            <div class="step" id="step2"></div>
-            <div class="step" id="step3"></div>
-        </div>
-    </div>
+    </section>
+
     <script src="js/main.js"></script>
 </body>
 </html>

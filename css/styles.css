@@ -1,173 +1,103 @@
-/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Geist', sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: #0a0a2a;
+    background-color: #2A2A2A;
     color: #ffffff;
-    font-family: 'Arial', sans-serif;
-    min-height: 100vh;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-/* Visualization area */
-.visualization {
+.hero {
+    height: 100vh;
     position: relative;
-    height: 80vh;
-    background: #0f0f2f;
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Stars background animation */
-.stars {
-    position: absolute;
+.hero-image {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==');
-    animation: starMove 60s linear infinite;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
 }
 
-@keyframes starMove {
-    from { background-position: 0 0; }
-    to { background-position: 0 1000px; }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px;
+    max-width: 810px;
 }
 
-/* Tower structure */
-.tower {
+.hero-title {
+    font-size: 96px;
+    letter-spacing: 9%;
+    line-height: 103%;
+    font-weight: 700;
+}
+
+.content-section {
+    position: relative;
+    z-index: 2;
+    background-color: #2A2A2A;
+    padding: 100px 60px;
+}
+
+.visualization-container {
+    height: 300vh;
+    position: relative;
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.components {
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+.component {
     position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 40px;
-    height: 100%;
-    background: linear-gradient(90deg, #1a1a1a, #2a2a2a, #1a1a1a);
-    transform: translateX(-50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
 }
 
-/* Chopsticks */
+.description-box {
+    position: absolute;
+    left: 60px;
+    width: 300px;
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
 .chopsticks {
-    position: absolute;
     width: 200px;
     height: 20px;
-    background: linear-gradient(90deg, #cc0000, #ff0000);
-    left: 50%;
-    top: 50%;
-    transform-origin: center;
-    transition: all 1s ease;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    background: #cc0000;
+    transition: transform 0.5s ease;
 }
 
-.left-stick {
-    transform: translateX(-100%) rotate(0deg);
+.tower {
+    width: 40px;
+    height: 600px;
+    background: #4a4a4a;
 }
 
-.right-stick {
-    transform: translateX(0%) rotate(0deg);
-}
-
-/* Booster */
 .booster {
-    position: absolute;
     width: 60px;
     height: 300px;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    transition: all 2s ease;
-}
-
-.booster-body {
-    width: 100%;
-    height: 80%;
-    background: linear-gradient(90deg, #c0c0c0, #ffffff, #c0c0c0);
-    border-radius: 10px 10px 0 0;
-}
-
-.engine-section {
-    width: 100%;
-    height: 20%;
-    background: #4a4a4a;
-    border-radius: 0 0 10px 10px;
-}
-
-/* Controls and UI */
-.controls {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-button {
-    padding: 1rem 2rem;
-    margin: 0 1rem;
-    background: #cc0000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-button:hover {
-    background: #ff0000;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-}
-
-button:disabled {
-    background: #666;
-    cursor: not-allowed;
-}
-
-/* Info panel */
-.info-panel {
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    width: 300px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-}
-
-/* Step indicators */
-.step-indicator {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.step {
-    width: 12px;
-    height: 12px;
-    background: #333;
-    border-radius: 50%;
-    margin: 0 5px;
-    transition: background 0.3s ease;
-}
-
-.step.active {
-    background: #cc0000;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    background: linear-gradient(#silver, #white);
 }
